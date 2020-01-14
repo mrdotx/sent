@@ -61,6 +61,7 @@ sent is developed at http://tools.suckless.org/sent
 Patches
 -------
 sent-invertedcolors-72d33d4.diff 
+sent-options-20190213-72d33d4.diff 
 
 Last implemented commit
 -----------------------
