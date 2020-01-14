@@ -14,6 +14,11 @@ static const char *colors[] = {
     "#000000", /* background color */
 };
 
+static const char *inverted_colors[] = {
+	"#000000", /* foreground color */
+	"#FFFFFF", /* background color */
+};
+
 static const float linespacing = 1.0;
 
 /* how much screen estate is to be used at max for the content */

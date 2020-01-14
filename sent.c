@@ -25,6 +25,8 @@
 
 char *argv0;
 
+int use_inverted_colors = 0;
+
 /* macros */
 #define LEN(a)         (sizeof(a) / sizeof(a)[0])
 #define LIMIT(x, a, b) (x) = (x) < (a) ? (a) : (x) > (b) ? (b) : (x)
@@ -586,7 +588,11 @@ xinit()
 
 	if (!(d = drw_create(xw.dpy, xw.scr, xw.win, xw.w, xw.h)))
 		die("sent: Unable to create drawing context");
-	sc = drw_scm_create(d, colors, 2);
+	if (use_inverted_colors) {
+		sc = drw_scm_create(d, inverted_colors, 2);
+	} else {
+		sc = drw_scm_create(d, colors, 2);
+	}
 	drw_setscheme(d, sc);
 	XSetWindowBackground(xw.dpy, xw.win, sc[ColBg].pixel);
 
@@ -687,6 +693,9 @@ main(int argc, char *argv[])
 	case 'v':
 		fprintf(stderr, "sent-"VERSION"\n");
 		return 0;
+	case 'i':
+		use_inverted_colors = 1;
+		break;
 	default:
 		usage();
 	} ARGEND
