@@ -25,6 +25,9 @@ static const float linespacing = 1.0;
 static const float usablewidth = 1.00;
 static const float usableheight = 1.00;
 
+/* height of the presentation progress bar */
+static const int progressheight = 5;
+
 static Mousekey mshortcuts[] = {
     /* button         function        argument */
     { Button1,        advance,        {.i = +1} },

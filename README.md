@@ -62,6 +62,7 @@ Patches
 -------
 sent-invertedcolors-72d33d4.diff 
 sent-options-20190213-72d33d4.diff 
+sent-progress-bar-1.0.diff
 
 Last implemented commit
 -----------------------
