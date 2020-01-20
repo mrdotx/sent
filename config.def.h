@@ -7,7 +7,7 @@ static char *fontfallbacks[] = {
     "ubuntu",
 };
 #define NUMFONTSCALES 42
-#define FONTSZ(x) ((int)(10.0 * powf(1.1288, (x)))) /* x in [0, NUMFONTSCALES-1] */
+#define FONTSZ(x) ((int)(5.0 * powf(1.1288, (x)))) /* x in [0, NUMFONTSCALES-1] */
 
 static const char *colors[] = {
     "#FFFFFF", /* foreground color */
@@ -15,8 +15,8 @@ static const char *colors[] = {
 };
 
 static const char *inverted_colors[] = {
-	"#000000", /* foreground color */
-	"#FFFFFF", /* background color */
+    "#000000", /* foreground color */
+    "#FFFFFF", /* background color */
 };
 
 static const float linespacing = 1.0;
