@@ -66,4 +66,4 @@ sent-progress-bar-1.0.diff
 
 Last implemented commit
 -----------------------
-2017-09-07 21:40	update license	Markus Teich
+2020-05-13 11:20	Avoid out-of-bounds access when a slide input line begins with \0	Chris Down
