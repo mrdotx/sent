@@ -1,10 +1,10 @@
 # path:       /home/klassiker/.local/share/repos/sent/.gitignore
 # author:     klassiker [mrdotx]
 # github:     https://github.com/mrdotx/sent
-# date:       2020-08-31T17:51:05+0200
+# date:       2020-11-13T14:39:12+0100
 
-config.h
-drw.o
-sent
-sent.o
-util.o
+/config.h
+/drw.o
+/sent
+/sent.o
+/util.o
