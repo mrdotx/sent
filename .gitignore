@@ -1,7 +1,7 @@
-# path:       /home/klassiker/.local/share/repos/sent/.gitignore
-# author:     klassiker [mrdotx]
-# github:     https://github.com/mrdotx/sent
-# date:       2020-11-13T14:39:12+0100
+# path:   /home/klassiker/.local/share/repos/sent/.gitignore
+# author: klassiker [mrdotx]
+# github: https://github.com/mrdotx/sent
+# date:   2021-01-15T13:56:21+0100
 
 /config.h
 /drw.o
