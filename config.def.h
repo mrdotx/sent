@@ -1,7 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
 static char *fontfallbacks[] = {
-    "source code pro",
     "dejavu sans",
     "roboto",
     "ubuntu",
