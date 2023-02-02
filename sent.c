@@ -101,12 +101,12 @@ static void load(FILE *fp);
 static void advance(const Arg *arg);
 static void quit(const Arg *arg);
 static void resize(int width, int height);
-static void run();
-static void usage();
-static void xdraw();
-static void xhints();
-static void xinit();
-static void xloadfonts();
+static void run(void);
+static void usage(void);
+static void xdraw(void);
+static void xhints(void);
+static void xinit(void);
+static void xloadfonts(void);
 
 static void bpress(XEvent *);
 static void cmessage(XEvent *);
@@ -218,8 +218,7 @@ ffload(Slide *s)
 	s->img->bufwidth = ntohl(*(uint32_t *)&hdr[8]);
 	s->img->bufheight = ntohl(*(uint32_t *)&hdr[12]);
 
-	if (s->img->buf)
-		free(s->img->buf);
+	free(s->img->buf);
 	/* internally the image is stored in 888 format */
 	s->img->buf = ecalloc(s->img->bufwidth * s->img->bufheight, strlen("888"));
 
@@ -271,6 +270,9 @@ ffprepare(Image *img)
 
 	if (depth < 24)
 		die("sent: Display color depths < 24 not supported");
+
+	if (img->ximg)
+		XDestroyImage(img->ximg);
 
 	if (!(img->ximg = XCreateImage(xw.dpy, CopyFromParent, depth, ZPixmap, 0,
 	                               NULL, width, height, 32, 0)))
@@ -498,7 +500,7 @@ resize(int width, int height)
 }
 
 void
-run()
+run(void)
 {
 	XEvent ev;
 
@@ -520,7 +522,7 @@ run()
 }
 
 void
-xdraw()
+xdraw(void)
 {
 	unsigned int height, width, i;
 	Image *im = slides[idx].img;
@@ -554,7 +556,7 @@ xdraw()
 }
 
 void
-xhints()
+xhints(void)
 {
 	XClassHint class = {.res_name = "sent", .res_class = "presenter"};
 	XWMHints wm = {.flags = InputHint, .input = True};
@@ -572,7 +574,7 @@ xhints()
 }
 
 void
-xinit()
+xinit(void)
 {
 	XTextProperty prop;
 	unsigned int i;
@@ -620,7 +622,7 @@ xinit()
 }
 
 void
-xloadfonts()
+xloadfonts(void)
 {
 	int i, j;
 	char *fstrs[LEN(fontfallbacks)];
@@ -639,8 +641,7 @@ xloadfonts()
 	}
 
 	for (j = 0; j < LEN(fontfallbacks); j++)
-		if (fstrs[j])
-			free(fstrs[j]);
+		free(fstrs[j]);
 }
 
 void
@@ -689,7 +690,7 @@ configure(XEvent *e)
 }
 
 void
-usage()
+usage(void)
 {
 	die("usage: %s [-c fgcolor] [-b bgcolor] [-f font] [file]", argv0);
 }

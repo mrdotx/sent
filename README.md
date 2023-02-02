@@ -66,4 +66,4 @@ sent-progress-bar-1.0.diff
 
 Last implemented commit
 -----------------------
-2020-05-13 11:20	Avoid out-of-bounds access when a slide input line begins with \0	Chris Down
+2023-01-10 17:39	remove unnecessary NULL checks and add `void` for an empty parameter list	Tom Schwindl

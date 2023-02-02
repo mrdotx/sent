@@ -1,5 +1,6 @@
-.Dd 2016-08-12
+.Dd August 12, 2016
 .Dt SENT 1
+.Os
 .Sh NAME
 .Nm sent
 .Nd simple plaintext presentation tool
@@ -14,13 +15,14 @@
 .Sh DESCRIPTION
 .Nm
 is a simple plain text presentation tool for X. sent does not need LaTeX,
-LibreOffice or any other fancy file format. Instead, sent reads plain text
-describing the slides. sent can also draw images.
+LibreOffice or any other fancy file format.
+Instead, sent reads plain text describing the slides. sent can also draw
+images.
 .Pp
-Every paragraph represents a slide in the presentation. Especially for
-presentations using the Takahashi method this is very nice and allows
-you to write the presentation for a quick lightning talk within a
-few minutes.
+Every paragraph represents a slide in the presentation.
+Especially for presentations using the Takahashi method this is very nice and
+allows you to write the presentation for a quick lightning talk within a few
+minutes.
 .Sh OPTIONS
 .Bl -tag -width Ds
 .It Fl v
@@ -50,7 +52,8 @@ Go to previous slide, if existent.
 .It Sy Escape | q
 Quit.
 .It Sy r
-Reload the slides. Only works on file input.
+Reload the slides.
+Only works on file input.
 .It Sy Right | Return | Space | l | j | Down | Next | n
 Go to next slide, if existent.
 .It Sy Left | Backspace | h | k | Up | Prior | p
@@ -77,6 +80,7 @@ without interpreting them.
 .Sh CUSTOMIZATION
 .Nm
 can be customized by creating a custom config.h and (re)compiling the
-source code. This keeps it fast, secure and simple.
+source code.
+This keeps it fast, secure and simple.
 .Sh SEE ALSO
 .Xr 2ff 1
